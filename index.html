@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Todo App</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <main>
+        <div class="todo-container">
+            <div class="title">
+                <h1>To-Do App</h1>
+            </div>
+            <form class="todo-form" method="get">
+                <input type="text" id="task-input" placeholder="Add task">
+                <button type="button" onclick="addTask()">Add Task</button>
+            </form>
+            <div class="task-table-header">
+                <div>
+                    <h4>My Tasks</h4>
+                </div>
+                <div class="task-action">
+                    <input type="hidden" id="taskids" value="">
+                    <button type="button" class="delete-all" onclick="removeAll()">Remove All</button>
+                </div>
+            </div>
+
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" class="select-all" onchange="bulkSelect(event)">
+                                <span class="checkbox-idicator"></span>
+                            </label>
+                        </th>
+                        <th>Task</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="task-tbody">
+                    <!-- <tr>
+                        <td>
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-idicator"></span>
+                            </label>
+                        </td>
+                        <td>Task Item</td>
+                        <td></td>
+                        <td><button type="button" class="remove-task">Remove</button></td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

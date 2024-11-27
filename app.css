@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: "Bebas Neue", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: "Afacad Flux", sans-serif;
+}
+
+input,
+button {
+    font-family: "Afacad Flux", sans-serif;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(bg-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    filter: blur(3px);
+}
+
+.todo-container {
+    width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.title {
+    padding: 10px;
+    border-bottom: 5px solid #ffcc00;
+}
+
+.todo-form {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-form input {
+    width: 80%;
+    height: 40px;
+    padding: 0 20px;
+    border: 1px solid #ffcc00;
+    border-radius: 50px;
+    font-size: 15px;
+    outline-color: #ffcc00;
+}
+
+.todo-form button {
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: #ffcc00;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.task-table-header {
+    padding: 0 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ffcc00;
+    margin-bottom: 20px;
+}
+
+.task-table-header h4 {
+    font-size: 20px;
+}
+
+.task-table-header .delete-all {
+    background-color: red;
+    border: none;
+    padding: 8px 20px;
+    font-size: 15px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-table thead {
+    background-color: #f2f2f2;
+}
+
+.task-table tr th,
+.task-table tr td {
+    padding: 10px;
+}
+
+.custom-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-checkbox input {
+    visibility: hidden;
+}
+
+.custom-checkbox .checkbox-idicator {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.custom-checkbox .checkbox-idicator::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    top: 3px;
+    left: 6px;
+    display: none;
+}
+
+.custom-checkbox input:checked~.checkbox-idicator {
+    background-color: #ffcc00;
+    border-color: #ffaa00;
+}
+
+.custom-checkbox input:checked~.checkbox-idicator::before {
+    display: block;
+}
+
+.task-table th,
+.task-table td {
+    text-align: center;
+}
+
+.remove-task {
+    padding: 5px 15px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+.remove-task:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.task-table th:nth-child(2) {
+    width: 65%;
+}
+
+.task-table th:nth-child(2),
+.task-table td:nth-child(2) {
+    text-align: left;
+}
+
+
+.switch {
+    border: 1px solid #d4d4d4;
+    width: 40px;
+    height: 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: .4s;
+}
+
+.switch input {
+    visibility: hidden;
+}
+
+.switch .switch-idicator {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    position: absolute;
+    left: 5px;
+    border-radius: 50px;
+    transition: .4s;
+    background-color: #d4d4d4;
+    cursor: pointer;
+}
+
+.switch input:checked~.switch-idicator {
+    transform: translateX(15px);
+    background-color: #fff;
+}
+ 
+.switch:has(input:checked){
+    background-color: #00bf00;
+}
